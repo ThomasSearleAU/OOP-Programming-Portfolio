@@ -27,10 +27,12 @@ class Transaction:
             print("transaction already completed, cancellation failed")
         elif self.status == "cancelled":
             print("already cancelled, cancellation failed")
-        else:
+        elif self.status == "pending":
             print(f"cancelling transaction with id: {self.id}...")
             self.status = "cancelled"
             print("transaction cancelled")
+        else:
+            print("error, cannot cancel; invalid transaction... please call support for assistance")
 
     def changeDesc(self, new_d):
         self.description = new_d

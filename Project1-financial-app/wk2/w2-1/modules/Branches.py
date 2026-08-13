@@ -13,14 +13,14 @@ class Branch:
         return f"Branch({self.id}, {self.name}, {self.location}, {self.phone_num}, {self.open})"
 
     def openBranch(self):
-        if self.open == False:
+        if not self.open:
             print("already open - unchanged")
         else:
             self.open = True
             print("branch has been opened")
     
     def closeBranch(self):
-        if self.open == True:
+        if self.open:
             print("already closed - unchanged")
         else:
             self.open = False

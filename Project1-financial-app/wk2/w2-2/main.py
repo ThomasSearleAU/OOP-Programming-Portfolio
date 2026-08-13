@@ -37,5 +37,17 @@ Branch1 = Branch(0, "branch1", "location1", 123456789, True)
 Branch1.closeBranch()
 
 
-print(repr(Branch1)) #why does this print the memory address instead of the string representation?
-print(str(Branch1)) #this prints the string representation as expected
+
+print(f"{repr(Branch1)} print one") #why does this print the memory address instead of the string representation?
+print(f"{str(Branch1)} print two") 
+
+
+print(str(Branch1)+" print three")
+print(Branch1) #this prints the string representation as expected
+repr(Branch1)
+print(Branch1)#this prints the string representation as expected
+
+str(Transaction1)
+print(Transaction1) #this prints the string representation as expected
+
+
