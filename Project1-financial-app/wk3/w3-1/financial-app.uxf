@@ -63,6 +63,7 @@ m2=0..m</panel_attributes><additional_attributes>10;10;10;120</additional_attrib
 
 +open_branch{}: -&gt; void
 +close_branch{}: -&gt; void
-+update_phone{}: -&gt; void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>390</x><y>440</y><w>140</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
-controls
-</panel_attributes><additional_attributes>120;20;10;20</additional_attributes></element></diagram>
++update_phone{}: -&gt; void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>260</x><y>230</y><w>80</w><h>140</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+prefers v
+m2=1..m</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element></diagram>

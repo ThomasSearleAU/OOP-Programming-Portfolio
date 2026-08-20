@@ -2,54 +2,37 @@ from modules.clients import Client
 from modules.accounts import Account
 from modules.transactions import Transaction
 from modules.branches import Branch
-client1 = Client(0, "george", 238472394, "george@george.gg")
-client2 = Client(1, "rosemary", 89374983, "mary-rose@the_flower_shop.com")
 
-print(client1.name, client1.get_id())
-print(client2.get_email(), client2.get_mobile())
+client1 = Client(1, "John Doe", 1234567890, "john.doe@example.com")
+client2 = Client(2, "Jane Smith", 9876543210, "jane.smith@example.com")
+client3 = Client(3, "Alice Johnson", 5555555555, "alice.johnson@example.com")
 
-client1.change_contact("george2nd@gmail.com")
-client2.change_contact("mary-rose@the_flower_shop.com", 123545)
+account1 = Account(1, 1000.0, "savings")
+account2 = Account(2, 500.0, "checking")    
+account3 = Account(3, 2000.0, "savings")
 
-client1.change_name()
-client2.change_name("maryrose")
+branch1 = Branch(1, "Main Branch", "123 Main St", 1234567890, True)
+branch2 = Branch(2, "Second Branch", "456 Second St", 9876543210, False)
+branch3 = Branch(3, "Third Branch", "789 Third St", 5555555555, True)
 
-account1 = Account(0, 50000, "saving")
-account2 = Account(1, 32988, "spending")
-
-print(account1.get_balance(), account2.get_balance())
-account1.deposit(20001)
-account2.deposit(3024)
-account1.withdraw(20)
-account2.withdraw(400000000001)
-print(account1.get_balance(), account2.get_balance())
-
-print(account1.get_id())
-account2.id = 4   #confirmed changing one obj doesnt change all
-print(account1.get_id())
-
-Transaction1 = Transaction(0, "transfer", 4, "fungile business", "pending")
-Transaction1.cancel_transaction()
-Transaction1.cancel_transaction()
-Transaction1.process_transaction()
-
-Branch1 = Branch(0, "branch1", "location1", 123456789, True)
-Branch1.close_branch()
+transaction1 = Transaction(1, "deposit", 100.0, "Deposit to savings account", "pending")
+transaction2 = Transaction(2, "withdrawal", 50.0, "Withdrawal from checking account", "completed")
+transaction3 = Transaction(3, "transfer", 200.0, "Transfer from savings to checking", "pending")
 
 
+print(client1.get_email())
+print(client2.get_id())
+print(client3.get_mobile())
 
-print(f"{repr(Branch1)} print one") #why does this print the memory address instead of the string representation?
-print(f"{str(Branch1)} print two") 
+example_client = Client(4, "Bob Brown", 1112223333, "bob.brown@example.com")
+example_fail = Client("invalid_id", "Invalid User", 1234567890, "invalid.email@example.com")   
 
+client1.add_account(account1)
+client1.add_account(account1)  # Attempt to add the same account again
 
-print(str(Branch1)+" print three")
-print(Branch1) #this prints the string representation as expected
-repr(Branch1)
-print(Branch1)#this prints the string representation as expected
+client2.add_account(account2)
+client3.add_account(account3)
+client2.remove_account(account2)
+print(account2)
 
-str(Transaction1)
-print(Transaction1) #this prints the string representation as expected
-print(str(Transaction1))
-
-
-
+client1.set_preferred_branch(branch1)
