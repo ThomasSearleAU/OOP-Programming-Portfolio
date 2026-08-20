@@ -1,10 +1,21 @@
 class Branch:
     def __init__(self, id: int, name: str, loc: str, ph_n: int, open: bool):
-        self.__id = id
-        self.name = name
-        self.location = loc
-        self.__phone_num = ph_n
-        self.__open = open
+        if not isinstance(id, int):
+            print("invalid data type for id, must be int")
+        if not isinstance(name, str):
+            print("invalid data type for name, must be str")
+        if not isinstance(loc, str):
+            print("invalid data type for loc, must be str")
+        if not isinstance(ph_n, int):
+            print("invalid data type for ph_n, must be int")
+        if not isinstance(open, bool):
+            print("invalid data type for open, must be bool")
+        else:
+            self.__id = id
+            self.name = name
+            self.location = loc
+            self.__phone_num = ph_n
+            self.__open = open
     def open_branch(self):
         if self.__open == False:
             print("already open - unchanged")

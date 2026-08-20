@@ -1,9 +1,18 @@
 class Client:
     def __init__(self, id, name, mobile_number, email): #constructor
-        self.__id = id
-        self.name = name
-        self.__mobile_number = mobile_number
-        self.__email = email
+        if not isinstance(id, int):
+            print("invalid data type for id, must be int")
+        if not isinstance(name, str):
+            print("invalid data type for name, must be str")
+        if not isinstance(mobile_number, str):
+            print("invalid data type for mobile_number, must be str")
+        if not isinstance(email, str):
+            print("invalid data type for email, must be str")
+        else:
+            self.__id = id
+            self.name = name
+            self.__mobile_number = mobile_number
+            self.__email = email
     
     def __str__(self):
         return f"Client ID: {self.__id} \nClient Name: {self.name} \nClient Mobile Number: {self.__mobile_number} \nClient Email: {self.__email}"

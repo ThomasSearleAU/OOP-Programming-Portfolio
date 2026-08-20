@@ -1,15 +1,26 @@
 class Transaction:
     def __init__(self, id: int, type: str, amount: float, desc: str, status: str = "pending"):
-        self.__id = id
-        self.__type = type
-        self.__amount = amount
-        self.description = desc
-        self.status = status
+        if not isinstance(id, int):
+            print("invalid data type for id, must be int")
+        if not isinstance(type, str):
+            print("invalid data type for type, must be str")
+        if not isinstance(amount, (int, float)):
+            print("invalid data type for amount, must be float")
+        if not isinstance(desc, str):
+            print("invalid data type for desc, must be str")
+        if not isinstance(status, str):
+            print("invalid data type for status, must be str")
+        else:
+            self.__id = id
+            self.__type = type
+            self.__amount = amount
+            self.description = desc
+            self.status = status
     def process_transaction(self):
         if self.status == "pending":
             print("processing transaction...")
             self.status = "complete"
-            print("transaction processed sucsessfully.")
+            print("transaction processed successfully.")
         elif self.status == "complete":
             print("transaction already satisfied")
         else:
