@@ -1,6 +1,6 @@
 from modules.accounts import Account
 from modules.branches import Branch
-
+# Client class represents a bank client - responsible for managing client details and accounts.
 class Client:
     def __init__(self, id, name, mobile_number, email): #constructor
         if not isinstance(id, int):

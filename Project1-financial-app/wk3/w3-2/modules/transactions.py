@@ -1,3 +1,4 @@
+# Transaction class represents a bank transaction - responsible for managing transaction details and status.
 class Transaction:
     def __init__(self, id: int, type: str, amount: float, desc: str, status: str = "pending"):
         if not isinstance(id, int):

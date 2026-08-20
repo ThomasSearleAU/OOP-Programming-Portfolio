@@ -1,4 +1,5 @@
-class Account:
+# Account class represents a bank account - responsible for managing account details and transactions.
+class Account: 
     def __init__(self, id, balance, type):
         if not isinstance(id, int):
             print("invalid data type for id, must be int")

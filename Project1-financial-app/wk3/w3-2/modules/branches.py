@@ -1,3 +1,4 @@
+# Branch class represents a bank branch - responsible for managing branch details and operations.
 class Branch:
     def __init__(self, id: int, name: str, loc: str, ph_n: int, open: bool):
         if not isinstance(id, int):
