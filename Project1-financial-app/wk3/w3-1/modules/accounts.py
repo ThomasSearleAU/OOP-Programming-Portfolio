@@ -9,7 +9,7 @@ class Account:
         else:
             self.__id = id
             self.__balance = balance
-            self.__type = type
+            self.type = type
 
     # def update_balance(self, adjuster):
     #     self.__balance += adjuster

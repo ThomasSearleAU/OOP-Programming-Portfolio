@@ -46,3 +46,4 @@ class Transaction:
         return self.__type
     def get_amount(self):
         return self.__amount
+
