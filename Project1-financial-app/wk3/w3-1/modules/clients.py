@@ -1,3 +1,6 @@
+from modules.accounts import Account
+from modules.branches import Branch
+
 class Client:
     def __init__(self, id, name, mobile_number, email): #constructor
         if not isinstance(id, int):
@@ -13,6 +16,35 @@ class Client:
             self.name = name
             self.__mobile_number = mobile_number
             self.__email = email
+            self.accounts = []
+            self.preferred_branch = None
+
+    def set_preferred_branch(self, branch: Branch):
+        if not isinstance(branch, Branch):
+            print("invalid data type for branch, must be Branch")
+            return
+        self.preferred_branch = branch
+        print(f"preferred branch for client {self.name} set to {branch.name}")
+
+    def add_account(self, account: Account):
+        if not isinstance(account, Account):
+            print("invalid data type for account, must be Account")
+            return
+        elif account in self.accounts:
+            print(f"account with id {account.get_id()} already exists for client {self.name}")
+            return
+        self.accounts.append(account)
+        print(f"account with id {account.get_id()} added to client {self.name}")
+
+    def remove_account(self, account: Account):
+        if not isinstance(account, Account):
+            print("invalid data type for account, must be Account")
+            return
+        elif account not in self.accounts:
+            print(f"account with id {account.get_id()} does not exist for client {self.name}")
+            return
+        self.accounts.remove(account)
+        print(f"account with id {account.get_id()} removed from client {self.name}")
     
     def __str__(self):
         return f"Client ID: {self.__id} \nClient Name: {self.name} \nClient Mobile Number: {self.__mobile_number} \nClient Email: {self.__email}"
