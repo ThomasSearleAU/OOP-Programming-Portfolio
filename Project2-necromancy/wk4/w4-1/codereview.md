@@ -1,0 +1,1 @@
+made changes to uml design regarding the composition versus containment of items in inventory and 
