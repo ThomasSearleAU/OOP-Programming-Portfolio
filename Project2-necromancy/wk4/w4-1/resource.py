@@ -4,10 +4,10 @@ class Resource:
         self.name
         self.type
         self.__quantity = quantity
-    @property
-    def get_quantity(self):
+
+    def __get_quantity(self):
         return self.__quantity
     
-    def set_quantity(self):
-        if self.__quantity:
-            pass
+    def __set_quantity(self, setter):
+        self.__quantity = setter
+    quantity = property(__get_quantity, __set_quantity)
