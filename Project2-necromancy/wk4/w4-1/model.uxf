@@ -27,7 +27,8 @@ uses &gt;
 m1=1..n
 m2=1..n</panel_attributes><additional_attributes>30;230;30;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>160</x><y>461</y><w>210</w><h>190</h></coordinates><panel_attributes>_inventory_
 --
-items: list</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>221</y><w>120</w><h>260</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+items: list
+.</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>221</y><w>120</w><h>260</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 must contain v
 m1=1..1
 m2=0..n</panel_attributes><additional_attributes>10;10;10;240</additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>491</y><w>360</w><h>120</h></coordinates><panel_attributes>lt=&lt;-
