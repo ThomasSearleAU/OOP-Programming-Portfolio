@@ -25,3 +25,7 @@ class Inventory:
             if item.quantity < ritual.get(item.name, 0):
                 return False
         return True
+    def spend_ritual_cost(self, ritual):
+        if self.check_requirements(ritual):
+            for item in self.inventory:
+                item.change_quantity(-ritual.get(item.name, 0))

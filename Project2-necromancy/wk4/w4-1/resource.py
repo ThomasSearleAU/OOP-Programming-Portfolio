@@ -10,6 +10,6 @@ class Resource:
     def __set_quantity(self, setter):
         self.__quantity = setter
 
-    def __increase_quantity(self, edit):
+    def change_quantity(self, edit):
         self.__quantity += edit
-    quantity = property(__get_quantity, __set_quantity, __increase_quantity)
+    quantity = property(__get_quantity, __set_quantity, change_quantity)
