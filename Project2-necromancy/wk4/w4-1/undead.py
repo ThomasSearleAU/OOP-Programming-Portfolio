@@ -18,7 +18,8 @@ class Undead:
         self.__power = power
         self.__level = 1
         self.type
-    
+    def get_id(self):
+        return self.__unit_id
     def level_increase(self):
         self.__level += 1
         if self.__health < self.MAX_HEALTH: self.__health += self.HEALTH_PER_LEVEL #validates then increases health

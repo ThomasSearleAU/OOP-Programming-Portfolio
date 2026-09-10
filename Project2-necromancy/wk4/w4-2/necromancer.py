@@ -6,7 +6,7 @@ class Necromancer:
     def __init__(self, name, type):
         self.__name = name
         self.__inventory = Inventory()
-        self.__undead_list = []
+        self.__undead_list= []
         self.__undead_type = type
 
     def summon_undead(self, ritual):
@@ -19,4 +19,7 @@ class Necromancer:
             return None
         self.__undead_list.append(ritual.summon_undead())
 
-    
+    def dismiss_undead(self, id):
+        for individual in self.__undead_list:
+            if individual.get_id() == id:
+                self.__undead_list.pop(individual) 
