@@ -10,12 +10,14 @@ class Undead:
     HEALTH_PER_LEVEL = 2
     POWER_PER_LEVEL = 5
 
-    def __init__(self, unit_id, name, hp, power):
+
+    def __init__(self, unit_id, name, hp, power, type):
         self.__unit_id = unit_id
         self.__name = name
         self.__health = hp
         self.__power = power
         self.__level = 1
+        self.type
     
     def level_increase(self):
         self.__level += 1
