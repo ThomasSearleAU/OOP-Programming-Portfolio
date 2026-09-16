@@ -1,6 +1,6 @@
 from resource import Resource
 ALL_ITEMS = [
-    Resource(0, "Necrotic Rune", 0),
+    Resource(0, "Necrotic Rune", 0), #dont have outside of inventory (poor encapse) 
     Resource(1, "Spirit Rune", 0),
     Resource(2, "Bone Rune", 0),
     Resource(3, "Flesh Rune", 0),
