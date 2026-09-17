@@ -1,5 +1,5 @@
 from modules.clients import Client
-from modules.accounts import Account
+from modules.accounts import Account, SavingsAccount, EverydayAccount
 from modules.transactions import Transaction
 from modules.branches import Branch
 
@@ -36,3 +36,23 @@ client2.remove_account(account2)
 print(account2)
 
 client1.set_preferred_branch(branch1)
+
+save = SavingsAccount(1, 59950, 10) #making one of those saving account thingoes
+print(isinstance(save, Account))    #makin sure it is an account (outputs true btw)
+
+evryday = EverydayAccount(2, 67676) #same ting fam, but with everyday account
+print(isinstance(evryday, Account)) # :P
+
+NewMan = Client(42, "Mr. John Newperson", "42", "gugjugbuggler@nubbys.com")
+
+NewMan.add_account(save)
+NewMan.add_account(evryday)
+
+save.deposit(40)
+evryday.deposit(20)
+
+save.withdraw(9999999) # attempt to enact error
+evryday.withdraw(9999999) #same :P
+
+save.withdraw(1)    #a valid one now
+evryday.withdraw(1)
