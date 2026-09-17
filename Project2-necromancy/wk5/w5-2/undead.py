@@ -30,6 +30,7 @@ class Undead:
     def command(self, command):
         print(f"your unit does your bidding, and did: {command}")
 
+
     def __str__(self):
         return f"undead number: {self.__unit_id} is {self.__name}, a level {self.__level} undead with {self.__health} of {self.MAX_HEALTH} hp and {self.__power} of {self.MAX_POWER} power."
 
@@ -42,12 +43,18 @@ class WarriorUndead(Undead):
     def command(self, command):
         print(f"your {self.type} bangs his sheild, and screams an ungodly cry: {command}")
 
+    def combat_style(self):
+        print("i fight hard and persistently")
+
 class CursedUndead(Undead):
     def __init__(self, unit_id, name, hp, power, type="CursedUndead"):
         super().__init__(unit_id,name,hp,power,type)
     
     def command(self, command):
         print(f"OOOOoooooOOooOOoooo~ your {self.type} moans in a ghoulish manner: {command}") #spoopy O_o
+    
+    def combat_style(self):
+        print("i fight with cursed power and spells")
 
 #"specialised" subclasses
 
@@ -66,3 +73,16 @@ class VengefulGhost(CursedUndead):
 class PutridZombie(Undead):
     def __init__(self, unit_id, name, hp, power):
         super().__init__(unit_id,name,hp,power, "PutridZombie")
+
+class DeathKnight(WarriorUndead, CursedUndead):
+    def __init__(self, unit_id, name):
+        self.MAX_HEALTH = 1000
+        self.MIN_HEALTH = 100
+        self.HEALTH_PER_LEVEL = 100
+        self.POWER_PER_LEVEL = 20
+        self.inital_hp = 100
+        self.initial_power = 100
+        super().__init__(unit_id,name,self.initial_hp,self.initial_power, "DeathKnight")
+
+    def combat_style(self):
+        print("i am a death knight! i use the power of killing to chop off heads!")
