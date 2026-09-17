@@ -33,6 +33,8 @@ class Undead:
     def __str__(self):
         return f"undead number: {self.__unit_id} is {self.__name}, a level {self.__level} undead with {self.__health} of {self.MAX_HEALTH} hp and {self.__power} of {self.MAX_POWER} power."
 
+#main subclasses
+
 class WarriorUndead(Undead):
     def __init__(self, unit_id, name, hp, power, type="WarriorUndead"):
         super().__init__(unit_id,name,hp,power,type)
@@ -47,3 +49,20 @@ class CursedUndead(Undead):
     def command(self, command):
         print(f"OOOOoooooOOooOOoooo~ your {self.type} moans in a ghoulish manner: {command}") #spoopy O_o
 
+#"specialised" subclasses
+
+class SkeletonWarrior(WarriorUndead):
+    def __init__(self, unit_id, name, hp, power):
+        super().__init__(unit_id,name,hp,power, "Skeleton Warrior")
+
+class PhantomGuardian(WarriorUndead):
+    def __init__(self, unit_id, name, hp, power):
+        super().__init__(unit_id,name,hp,power, "PhantomGuardian")
+
+class VengefulGhost(CursedUndead):
+    def __init__(self, unit_id, name, hp, power):
+        super().__init__(unit_id,name,hp,power, "VengefulGhost")
+
+class PutridZombie(Undead):
+    def __init__(self, unit_id, name, hp, power):
+        super().__init__(unit_id,name,hp,power, "PutridZombie")
