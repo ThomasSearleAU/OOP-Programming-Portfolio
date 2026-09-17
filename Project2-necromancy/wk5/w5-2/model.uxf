@@ -1,4 +1,4 @@
-<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>100</x><y>11</y><w>250</w><h>170</h></coordinates><panel_attributes>_Necromancer_
+<diagram program="umletino" version="15.1"><zoom_level>7</zoom_level><element><id>UMLClass</id><coordinates><x>126</x><y>154</y><w>175</w><h>119</h></coordinates><panel_attributes>_Necromancer_
 --
 -id: int
 -inventory: Inventory()
@@ -6,22 +6,22 @@
 --
 +summon_undead(Ritual)
 +dismiss_undead()
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>480</x><y>11</y><w>210</w><h>100</h></coordinates><panel_attributes>_SummoningRitual_
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>392</x><y>154</y><w>147</w><h>70</h></coordinates><panel_attributes>_SummoningRitual_
 --
 -id: int
 -ritual_cost: list[ -&gt; resource]
 -level_requirement: int
 --
-generate_undead() -&gt; arr</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>300</x><y>251</y><w>210</w><h>140</h></coordinates><panel_attributes>__undead__
+generate_undead() -&gt; arr</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>266</x><y>322</y><w>147</w><h>98</h></coordinates><panel_attributes>__undead__
 --
 -id: int
 -type: str
 -description: str
 -level: int
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>340</x><y>41</y><w>160</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>294</x><y>175</y><w>112</w><h>35</h></coordinates><panel_attributes>lt=&lt;-
 performs &gt;
 m1=1..*
-m2=1..*</panel_attributes><additional_attributes>140;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>620</x><y>311</y><w>210</w><h>160</h></coordinates><panel_attributes>_resource_
+m2=1..*</panel_attributes><additional_attributes>140;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>560</x><y>63</y><w>147</w><h>112</h></coordinates><panel_attributes>_resource_
 --
 +quantity_owned
 +name
@@ -29,23 +29,33 @@ m2=1..*</panel_attributes><additional_attributes>140;20;10;20</additional_attrib
 --
 +add amount
 +set amount
-+get amount</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>680</x><y>81</y><w>90</w><h>250</h></coordinates><panel_attributes>lt=&lt;-
++get amount</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>532</x><y>98</y><w>210</w><h>133</h></coordinates><panel_attributes>lt=&lt;-
 uses &gt;
 m1=1..n
-m2=1..n</panel_attributes><additional_attributes>30;230;30;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>80</x><y>411</y><w>210</w><h>190</h></coordinates><panel_attributes>_inventory_
+m2=1..n</panel_attributes><additional_attributes>250;11;280;10;280;160;10;160</additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>0</y><w>147</w><h>133</h></coordinates><panel_attributes>_inventory_
 --
 items: list
-.</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>110</x><y>171</y><w>120</w><h>260</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+.</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>35</x><y>126</y><w>105</w><h>119</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 must contain v
 m1=1..1
-m2=0..n</panel_attributes><additional_attributes>10;10;10;240</additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>441</y><w>360</w><h>120</h></coordinates><panel_attributes>lt=&lt;-
+m2=0..n</panel_attributes><additional_attributes>130;140;10;140;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>140</x><y>56</y><w>434</w><h>35</h></coordinates><panel_attributes>lt=&lt;-
 has &gt;
 m1=1..*
-m2=1..1</panel_attributes><additional_attributes>340;20;90;20;90;90;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>380</x><y>101</y><w>190</w><h>170</h></coordinates><panel_attributes>lt=-
+m2=1..1</panel_attributes><additional_attributes>600;21;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>322</x><y>217</y><w>133</w><h>119</h></coordinates><panel_attributes>lt=-
 summons
 m1=1..*
-m2=1..1</panel_attributes><additional_attributes>10;150;10;120;150;120;150;10</additional_attributes></element><element><id>Relation</id><coordinates><x>220</x><y>171</y><w>100</w><h>220</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=1..1</panel_attributes><additional_attributes>10;150;10;120;150;120;150;10</additional_attributes></element><element><id>Relation</id><coordinates><x>210</x><y>266</y><w>70</w><h>154</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
 contains/
 controls
 m1=1..1
-m2=1..*</panel_attributes><additional_attributes>10;10;10;190;80;190</additional_attributes></element></diagram>
+m2=1..*</panel_attributes><additional_attributes>10;10;10;190;80;190</additional_attributes></element><element><id>UMLClass</id><coordinates><x>469</x><y>378</y><w>147</w><h>49</h></coordinates><panel_attributes>_Warrior Undead_
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>672</x><y>378</y><w>147</w><h>49</h></coordinates><panel_attributes>_Cursed Undead_</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>406</x><y>322</y><w>252</w><h>49</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;340;10;340;50</additional_attributes></element><element><id>Relation</id><coordinates><x>539</x><y>343</y><w>210</w><h>49</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;50;10;20;280;20;280;50</additional_attributes></element><element><id>Relation</id><coordinates><x>532</x><y>420</y><w>21</w><h>63</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>476</x><y>455</y><w>133</w><h>49</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;50;10;20;170;20;170;50</additional_attributes></element><element><id>UMLClass</id><coordinates><x>392</x><y>490</y><w>119</w><h>49</h></coordinates><panel_attributes>_Skeleton Warrior_
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>525</x><y>490</y><w>119</w><h>49</h></coordinates><panel_attributes>_Phantom Guardian_
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>742</x><y>420</y><w>21</w><h>84</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>UMLClass</id><coordinates><x>672</x><y>490</y><w>147</w><h>49</h></coordinates><panel_attributes>_Vengeful Ghost_
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>308</x><y>413</y><w>21</w><h>154</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;200</additional_attributes></element><element><id>UMLClass</id><coordinates><x>294</x><y>553</y><w>147</w><h>49</h></coordinates><panel_attributes>_Putrid Zombie_
+--
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>
