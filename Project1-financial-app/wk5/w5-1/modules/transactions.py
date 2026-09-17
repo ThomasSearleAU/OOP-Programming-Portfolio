@@ -48,3 +48,4 @@ class Transaction:
     def get_amount(self):
         return self.__amount
 
+

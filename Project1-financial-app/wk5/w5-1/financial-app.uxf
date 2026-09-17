@@ -1,4 +1,4 @@
-<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>160</x><y>50</y><w>210</w><h>190</h></coordinates><panel_attributes>_client _
+<diagram program="umletino" version="15.1"><zoom_level>12</zoom_level><element><id>UMLClass</id><coordinates><x>0</x><y>0</y><w>252</w><h>228</h></coordinates><panel_attributes>_client _
 --
 -id: int
 +name: str
@@ -14,7 +14,7 @@
 
 
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>510</x><y>50</y><w>210</w><h>190</h></coordinates><panel_attributes>_account_
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>420</x><y>0</y><w>252</w><h>228</h></coordinates><panel_attributes>_account_
 --
 -id: int 
 -balance: int
@@ -24,13 +24,13 @@
 +get_balance{}: -&gt;int
 
 +deposit_funds{}: -&gt; void
-+withdraw_funds{}: -&gt; void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>120</y><w>170</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
++withdraw_funds{}: -&gt; void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>240</x><y>84</y><w>204</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
 holds
 
 m1=1..1 
 
 m2= 0..m
-</panel_attributes><additional_attributes>10;20;150;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>510</x><y>350</y><w>210</w><h>230</h></coordinates><panel_attributes>__transaction__
+</panel_attributes><additional_attributes>10;20;150;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>420</x><y>360</y><w>252</w><h>276</h></coordinates><panel_attributes>__transaction__
 --
 -id: int (private)
 -amount: int (private)
@@ -47,10 +47,10 @@ m2= 0..m
 +cancel_transaction{}: -&gt; void
 +process_transaction{}: -&gt;void
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>610</x><y>230</y><w>90</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>540</x><y>216</y><w>108</w><h>168</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 interacts in
 m1=1
-m2=0..m</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>UMLClass</id><coordinates><x>190</x><y>350</y><w>210</w><h>250</h></coordinates><panel_attributes>__branch__
+m2=0..m</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>UMLClass</id><coordinates><x>36</x><y>360</y><w>252</w><h>300</h></coordinates><panel_attributes>__branch__
 --
 -id: int
 +name: str
@@ -63,7 +63,12 @@ m2=0..m</panel_attributes><additional_attributes>10;10;10;120</additional_attrib
 
 +open_branch{}: -&gt; void
 +close_branch{}: -&gt; void
-+update_phone{}: -&gt; void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>260</x><y>230</y><w>80</w><h>140</h></coordinates><panel_attributes>lt=&lt;-
++update_phone{}: -&gt; void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>120</x><y>216</y><w>96</w><h>168</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
 prefers v
-m2=1..m</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element></diagram>
+m2=1..m</panel_attributes><additional_attributes>10;120;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>660</x><y>84</y><w>384</w><h>312</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;300;10;300;240</additional_attributes></element><element><id>Relation</id><coordinates><x>852</x><y>348</y><w>348</w><h>48</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;270;20</additional_attributes></element><element><id>Relation</id><coordinates><x>852</x><y>360</y><w>36</w><h>120</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1164</x><y>360</y><w>36</w><h>120</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>708</x><y>456</y><w>252</w><h>84</h></coordinates><panel_attributes>_Saving account_
+--
+interest_rate: float
+min_balance: float</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1032</x><y>456</y><w>252</w><h>84</h></coordinates><panel_attributes>_Everyday account_
+--
+max_withdrawal: float</panel_attributes><additional_attributes></additional_attributes></element></diagram>
