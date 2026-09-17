@@ -5,7 +5,7 @@ class Necromancer:
     MAX_UNDEAD = 10
     def __init__(self, name, type):
         self.__name = name
-        self.__inventory = Inventory()
+        self.__inventory = Inventory(self)
         self.__undead_list= []
         self.__undead_type = type
 
