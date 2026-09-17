@@ -26,7 +26,24 @@ class Undead:
         self.__level += 1
         if self.__health < self.MAX_HEALTH: self.__health += self.HEALTH_PER_LEVEL #validates then increases health
         if self.__power < self.MAX_POWER: self.__power += self.POWER_PER_LEVEL # validates then increases power
+    
+    def command(self, command):
+        print(f"your unit does your bidding, and did: {command}")
 
     def __str__(self):
         return f"undead number: {self.__unit_id} is {self.__name}, a level {self.__level} undead with {self.__health} of {self.MAX_HEALTH} hp and {self.__power} of {self.MAX_POWER} power."
+
+class WarriorUndead(Undead):
+    def __init__(self, unit_id, name, hp, power, type="WarriorUndead"):
+        super().__init__(unit_id,name,hp,power,type)
+
+    def command(self, command):
+        print(f"your {self.type} bangs his sheild, and screams an ungodly cry: {command}")
+
+class CursedUndead(Undead):
+    def __init__(self, unit_id, name, hp, power, type="CursedUndead"):
+        super().__init__(unit_id,name,hp,power,type)
+    
+    def command(self, command):
+        print(f"OOOOoooooOOooOOoooo~ your {self.type} moans in a ghoulish manner: {command}") #spoopy O_o
 
