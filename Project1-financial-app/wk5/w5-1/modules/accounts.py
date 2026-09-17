@@ -8,8 +8,8 @@ class Account:
         if not isinstance(type, str):
             print("invalid data type for type, must be str")
         else:
-            self.__id = id
-            self.__balance = balance
+            self._id = id
+            self._balance = balance
             self.type = type
 
     # def update_balance(self, adjuster):
@@ -17,17 +17,17 @@ class Account:
     #     print(f"new balace: {self.__balance}")
     #     pass
     def deposit(self, amount):
-        self.__balance += amount
-        print(f"balance: {self.__balance}")
+        self._balance += amount
+        print(f"balance: {self._balance}")
     
     def withdraw(self, amount):
-        self.__balance -= amount
-        print(f"balance: {self.__balance}")
+        self._balance -= amount
+        print(f"balance: {self._balance}")
 
     def get_balance(self):
-        print(f"the balance is: {self.__balance}")
-        return self.__balance
+        print(f"the balance is: {self._balance}")
+        return self._balance
     def get_id(self):
-        print(f"the id is: {self.__id}")
-        return self.__id
+        print(f"the id is: {self._id}")
+        return self._id
     
