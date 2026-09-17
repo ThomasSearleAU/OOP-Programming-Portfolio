@@ -30,4 +30,34 @@ class Account:
     def get_id(self):
         print(f"the id is: {self._id}")
         return self._id
+
+class SavingsAccount(Account):
+
+    MIN_BALANCE = 100
+
+    def __init__(self, id, balance, interest_rate):
+        super().__init__(id, balance)
+        self.__interest_rate = interest_rate
+    
+    def withdraw(self, amount):
+        if self._balance < self.MIN_BALANCE:
+            return False
+        elif self._balance < amount:
+            return False
+        else:
+            return super().withdraw(amount)
+
+class EverydayAccount(Account):
+
+    MAX_WITHDRAWAL = 100
+
+    def __init__(self, id, balance, type):
+        super().__init__(id, balance, type)
+    
+    def withdraw(self, amount):
+        if amount > self.MAX_WITHDRAWAL:
+            return False
+        else:
+            return super().withdraw(amount)
+
     
