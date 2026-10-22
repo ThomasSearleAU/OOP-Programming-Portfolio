@@ -20,9 +20,7 @@ class Entity(ABC):
             'wis': wisdom + self.get_race_bonus('wis'),
             'cha': charisma + self.get_race_bonus('cha')
         }
-        self.attacklist = {
-            'Unarmed Strike': [5 * self.stats['str'], 'melee']
-        }
+        self.attacklist = []
         self.__race = race
         self.__char_class = char_class
 
