@@ -11,4 +11,5 @@ class Melee_Attack(Attack):
         self.__stamina_cost = stam_cost
 
 class Magic_Attack(Attack):
-    def __init__(self, dice, effect, element)
+    def __init__(self, dice, effect, element):
+        

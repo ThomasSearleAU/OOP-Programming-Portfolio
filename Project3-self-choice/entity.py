@@ -1,14 +1,11 @@
 from dice import Dice
 from abc import ABC, abstractmethod
+from race import *
 class char_Class:
     def __init__(self):
         self.weapon 
 
-class Race:
-    def __init__(self, name, speed, abilities):
-        self.name = name
-        self.speed = speed
-        self.abilities = abilities
+
 
 class Entity(ABC):
     def __init__(self, race: Race, char_class: char_Class, strength, dexterity, intelligence, constitution, wisdom, charisma):
@@ -23,6 +20,12 @@ class Entity(ABC):
         self.attacklist = set() #if youre glumply like that
         self.__race = race
         self.__char_class = char_class
+
+    def get_race_bonus(self, stat):
+        if stat in self.__race.bonuses:
+            return self.__race.bonuses[stat]
+        else:
+            return 0
 
 
     def roll_AC(self, target):
@@ -46,9 +49,7 @@ class Entity(ABC):
         #use One action -i guess if playing barbarian add class action for 
 
 
-
 class Enemy_Entity:
-    def combat_turn(self):
-        hit = self.roll_AC(target)
-        if hit:
-            
+    def combat_turn(self, target):
+        pass
+

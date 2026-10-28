@@ -10,3 +10,10 @@ in terms of strucure, need to develop a way to link a child class of entity and 
 HENCE i can use multiple inheritencee!!!!!! ill make a 'class' class and a race class that a player/ entity can inherit from 
 
 remember to use abstract classes 
+
+
+
+28/10/26
+
+idk how im gonna implement picking an attack
+i think that maybe when you take a turn, and select attack, you can choose one?
