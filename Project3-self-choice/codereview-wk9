@@ -1,0 +1,9 @@
+can use the seed method to generate seed and decide what values will be randomised for testing. 
+
+talked about how i can implement my code for testing and how i can get a consistent sequence of random values for my 'stat block'.
+that is a starting point. i need to do research to affirm the best way to present that (eg. seed before vs after testing)
+
+overall i need to work on building something implementable, in my opinion i need to start over with more direction. 
+
+my plan from hereon out, is to create a second version, in which i will make current classes again, less structurelessly.
+

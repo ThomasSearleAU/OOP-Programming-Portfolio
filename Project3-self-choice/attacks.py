@@ -1,15 +1,30 @@
-
-class Attack:
-    def __init__(self, dice):
+from abc import ABC, abstractmethod
+import random
+from dice import *
+class Attack(ABC):
+    def __init__(self, dice, name, type):
         self.__dmg_dice = dice
-
-class Melee_Attack(Attack):
-    def __init__(self, dice, type, bleed, stam_cost):
-        super().__init__(dice)
-        self.__atk_type = type
-        self.__bleed = bleed
-        self.__stamina_cost = stam_cost
+        self.__name = name
+        self.__type = type
+    
+    @abstractmethod
+    def hit(self, caller, target):
+        pass
 
 class Magic_Attack(Attack):
-    def __init__(self, dice, effect, element):
+    def hit(self, caller, target, dice_quantity, dice_sides):
+        roll = random.randint(1, 20)
+        if roll >= target.armour_class:
+            dmg = 0
+            for i in range(dice_quantity):
+                dmg += Dice(dice_sides).roll
+            dmg += caller.__stats[self.__dmg_stat]
         
+
+
+
+
+
+# class Magic_Attack(Attack):
+#     def __init__(self, dice, effect, element):
+#         pass

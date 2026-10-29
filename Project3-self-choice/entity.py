@@ -1,14 +1,16 @@
 from dice import Dice
 from abc import ABC, abstractmethod
 from race import *
-class char_Class:
-    def __init__(self):
-        self.weapon 
+import random
+from attacks import *
+# class char_Class:
+#     def __init__(self):
+#         self.weapon 
 
 
 
 class Entity(ABC):
-    def __init__(self, race: Race, char_class: char_Class, strength, dexterity, intelligence, constitution, wisdom, charisma):
+    def __init__(self, armour_class, race: Race, strength = (Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), dexterity=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), intelligence=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), constitution=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), wisdom=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), charisma=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll())):
         self.__stats = {
             'str': strength + self.get_race_bonus('str'),
             'dex': dexterity + self.get_race_bonus('dex'),
@@ -17,9 +19,33 @@ class Entity(ABC):
             'wis': wisdom + self.get_race_bonus('wis'),
             'cha': charisma + self.get_race_bonus('cha')
         }
+
+        self.__armour_class = armour_class
         self.attacklist = set() #if youre glumply like that
         self.__race = race
-        self.__char_class = char_class
+        # self.__char_class = char_class
+        self.__health_points = 100
+
+
+    #armour class property methods
+    def get_armour_class(self):
+        return self.__armour_class
+    def set_armour_class(self, ac):
+        if isinstance(ac, int):
+            self.__armour_class = ac
+            return ac
+        else: return None
+    armour_class = property(get_armour_class, set_armour_class)
+
+    #health property methods
+    def get_health_points(self):
+        return self.__health_points
+    def set_health_points(self, hp):
+        if isinstance(hp, int):
+            self.__health_points = hp
+            return hp
+        else: return None
+    health_points = property(get_health_points, set_health_points)
 
     def get_race_bonus(self, stat):
         if stat in self.__race.bonuses:
@@ -38,18 +64,20 @@ class Entity(ABC):
             return False
     
     def recieve_damage(self, amount):
-        self.__health_points
+        self.__health_points -= amount
+        return self.__health_points
         
     @abstractmethod
-    def combat_turn(self):
+    def turn_method(self):
         pass
-        #according to d&d handbook, combat turns look like the following:
-        #1. movement - not really sure if it is compatible, seeing as my fight engine is more just turn based, and not simulated in a 'space'
-        #2. initiative should determine who's turn goes first
-        #use One action -i guess if playing barbarian add class action for 
 
+class Enemy_Entity(Entity):
+    def __init__(self, race: Race):
+        super().__init__(race)
+    
+    def turn_method(self, target):
+        if self.__health_points >= 0:
+            self.attacklist[random.randint(1, len(self.attacklist))].hit(self, target)
 
-class Enemy_Entity:
-    def combat_turn(self, target):
-        pass
+        
 
