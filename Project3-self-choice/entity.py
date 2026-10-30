@@ -79,5 +79,18 @@ class Enemy_Entity(Entity):
         if self.__health_points >= 0:
             self.attacklist[random.randint(1, len(self.attacklist))].hit(self, target)
 
+class player_entity(Entity):
+    def __init__(self, race):
+        super().__init__(race) 
+    
+    def turn_method(self, target):
+        if self.__health_points >=0 :
+            action = input("would you like to attack (a), or use an item (I)")
+            if action.lower() == "a":
+                for i, attack in enumerate(self.attacklist):
+                    print(f"{i} - {attack.name}")
+                attack_action = int(input("which attack would you like to use?"))
+                self.attacklist[attack_action].hit(self, target)
+
         
 
