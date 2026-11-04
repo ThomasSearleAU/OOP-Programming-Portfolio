@@ -27,6 +27,9 @@ class Magic_Attack(Attack):
             print(f"{self.__name}, failed.")
             return False
 
+class Melee_Attack(Attack):
+    pass
+
 
 
 

@@ -71,18 +71,39 @@ class Entity(ABC):
     def turn_method(self):
         pass
 
+#-----------------------------------Enemy classes-----------------------------------#
+
 class Enemy_Entity(Entity):
     def __init__(self, race: Race):
         super().__init__(race)
-        inventory = []
+        self.item_to_drop
     
     def turn_method(self, target):
         if self.__health_points >= 0:
             self.attacklist[random.randint(1, len(self.attacklist))].hit(self, target)
 
+class Orc_Enemy(Enemy_Entity):
+    def __init__(self, race: Race):
+        super().__init__(race)
+        self.health_points = 200
+
+class Goblin_Enemy(Enemy_Entity):
+    def __init__(self, race: Race):
+        super().__init__(race)
+        self.health_points = 85
+
+class Skeleton_Enemy(Enemy_Entity):
+    def __init__(self, race: Race):
+        super().__init__(race)
+        self.health_points = 90
+
+
+#-----------------------------------Player class-----------------------------------#
+
 class player_entity(Entity):
     def __init__(self, race):
-        super().__init__(race) 
+        super().__init__(race)
+        self.inventory = []
     
     def turn_method(self, target):
         if self.__health_points >=0 :
