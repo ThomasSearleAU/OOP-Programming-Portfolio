@@ -17,3 +17,8 @@ remember to use abstract classes
 
 idk how im gonna implement picking an attack
 i think that maybe when you take a turn, and select attack, you can choose one?
+
+4/11/26
+i am trying to figure out how items in inventory will work, and i think that for an enemy_entity i will include an item drop property containing the construction of a health_potion class or Food class. NOT OBJECT.
+
+when enemy is slain, it adds item to player.

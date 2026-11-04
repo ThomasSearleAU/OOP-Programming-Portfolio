@@ -74,6 +74,7 @@ class Entity(ABC):
 class Enemy_Entity(Entity):
     def __init__(self, race: Race):
         super().__init__(race)
+        inventory = []
     
     def turn_method(self, target):
         if self.__health_points >= 0:
@@ -85,12 +86,26 @@ class player_entity(Entity):
     
     def turn_method(self, target):
         if self.__health_points >=0 :
-            action = input("would you like to attack (a), or use an item (I)")
-            if action.lower() == "a":
-                for i, attack in enumerate(self.attacklist):
-                    print(f"{i} - {attack.name}")
-                attack_action = int(input("which attack would you like to use?"))
-                self.attacklist[attack_action].hit(self, target)
+            while True:
+                action = input("would you like to attack (a), or use an item (I)")
+                if action.lower() == "a":
+                    for i, attack in enumerate(self.attacklist):
+                        print(f"{i} - {attack.name}")
+                    attack_action = (input("which attack would you like to use? [type 'esc' to go back]: "))
+                    if attack_action.lower() == "esc": break
+                    else: 
+                        attack_action = str(attack_action)
 
+                    self.attacklist[attack_action].hit(self, target)
+                    break
+                elif action.lower() == "i":
+                    if len(self.inventory) > 0:
+                        for i, item in enumerate(self.inventory):
+                            print(f"{i} - {item.name}\n")
+                        item_sel = self.inventory[int(input("which item (by index): "))]
+                        item_sel.use_item
+                        break
+                    else:
+                        print("No items in inventory")
         
 
