@@ -6,11 +6,12 @@ from attacks import *
 # class char_Class:
 #     def __init__(self):
 #         self.weapon 
+import math
 
 
 
 class Entity(ABC):
-    def __init__(self, armour_class, race: Race, strength = (Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), dexterity=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), intelligence=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), constitution=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), wisdom=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), charisma=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll())):
+    def __init__(self, race: Race, strength = (Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), dexterity=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), intelligence=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), constitution=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), wisdom=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), charisma=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll())):
         self.__stats = {
             'str': strength + self.get_race_bonus('str'),
             'dex': dexterity + self.get_race_bonus('dex'),
@@ -20,7 +21,7 @@ class Entity(ABC):
             'cha': charisma + self.get_race_bonus('cha')
         }
 
-        self.__armour_class = armour_class
+        self.__armour_class = math.floor((self.__stats['dex']-10)/2) + 10
         self.attacklist = set() #if youre glumply like that
         self.__race = race
         # self.__char_class = char_class
