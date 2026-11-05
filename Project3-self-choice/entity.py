@@ -11,7 +11,9 @@ import math
 
 
 class Entity(ABC):
-    def __init__(self, race: Race, strength = (Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), dexterity=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), intelligence=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), constitution=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), wisdom=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), charisma=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll())):
+    def __init__(self, race: Race, class_: Class, strength = (Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), dexterity=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), intelligence=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), constitution=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), wisdom=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), charisma=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll())):
+        self.race = race
+        self.class_ = class_
         self.__stats = {
             'str': strength + self.get_race_bonus('str'),
             'dex': dexterity + self.get_race_bonus('dex'),
@@ -22,8 +24,8 @@ class Entity(ABC):
         }
 
         self.__armour_class = math.floor((self.__stats['dex']-10)/2) + 10
-        self.attacklist = set() #if youre glumply like that
-        self.__race = race
+        self.class_ = class_
+        
         # self.__char_class = char_class
         self.__health_points = 100
 
@@ -49,8 +51,8 @@ class Entity(ABC):
     health_points = property(get_health_points, set_health_points)
 
     def get_race_bonus(self, stat):
-        if stat in self.__race.bonuses:
-            return self.__race.bonuses[stat]
+        if stat in self.race.bonuses:
+            return self.race.bonuses[stat]
         else:
             return 0
 
@@ -77,10 +79,10 @@ class Entity(ABC):
 class Enemy_Entity(Entity):
     def __init__(self, race: Race):
         super().__init__(race)
-        self.item_to_drop
+        # self.item_to_drop               -implement
     
     def turn_method(self, target):
-        if self.__health_points >= 0:
+        if self.health_points >= 0:
             self.attacklist[random.randint(1, len(self.attacklist))].hit(self, target)
 
 class Orc_Enemy(Enemy_Entity):
@@ -107,19 +109,24 @@ class player_entity(Entity):
         self.inventory = []
     
     def turn_method(self, target):
-        if self.__health_points >=0 :
+        if self.health_points >=0 :
             while True:
                 action = input("would you like to attack (a), or use an item (I)")
                 if action.lower() == "a":
-                    for i, attack in enumerate(self.attacklist):
+                    for i, attack in enumerate(self.class_.attacklist):
                         print(f"{i} - {attack.name}")
-                    attack_action = (input("which attack would you like to use? [type 'esc' to go back]: "))
-                    if attack_action.lower() == "esc": break
-                    else: 
-                        attack_action = str(attack_action)
+                    if len(self.class_.attacklist) > 0:
+                        attack_action = (input("which attack would you like to use? [type 'esc' to go back]: "))
+                        if attack_action.strip().lower() == "esc": 
+                            continue
+                        
+                        else: 
+                            attack_action = str(attack_action)
 
-                    self.attacklist[attack_action].hit(self, target)
-                    break
+                        self.class_.attacklist[attack_action].hit(self, target)
+                        break
+                    else:
+                        print("No attacks in list.")
                 elif action.lower() == "i":
                     if len(self.inventory) > 0:
                         for i, item in enumerate(self.inventory):

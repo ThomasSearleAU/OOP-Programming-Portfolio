@@ -22,3 +22,6 @@ i think that maybe when you take a turn, and select attack, you can choose one?
 i am trying to figure out how items in inventory will work, and i think that for an enemy_entity i will include an item drop property containing the construction of a health_potion class or Food class. NOT OBJECT.
 
 when enemy is slain, it adds item to player.
+
+5/11/26 
+i need to implement class class, and i will do it soleley to define the attacks given to the player.

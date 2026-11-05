@@ -4,6 +4,7 @@ from attacks import *
 from dice import *
 from entity import *
 from race import *
+from class_ import *
 
 class Game:
     def __init__(self, player: player_entity):
@@ -52,8 +53,11 @@ if __name__ == '__main__':
     race = races[x]
     print(f"{race.name}")
 
-    player = player_entity(race)
+    y = input("what class [B - barbarian, W - wizard]")
+    class_ = classes[y]
+
+    player = player_entity(race, class_)
     game = Game(player)
-    Game.Game_Method()
+    game.Game_Method()
 
 
