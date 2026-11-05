@@ -9,7 +9,7 @@ from attacks import *
 import math
 
 
-
+from class_ import * 
 class Entity(ABC):
     def __init__(self, race: Race, class_: Class, strength = (Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), dexterity=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), intelligence=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), constitution=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), wisdom=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll()), charisma=(Dice(6).roll()+Dice(6).roll()+Dice(6).roll())):
         self.race = race
@@ -86,18 +86,18 @@ class Enemy_Entity(Entity):
             self.attacklist[random.randint(1, len(self.attacklist))].hit(self, target)
 
 class Orc_Enemy(Enemy_Entity):
-    def __init__(self, race: Race):
-        super().__init__(race)
+    def __init__(self):
+        super().__init__(orc_race, classes["B"])
         self.health_points = 200
 
 class Goblin_Enemy(Enemy_Entity):
-    def __init__(self, race: Race):
-        super().__init__(race)
+    def __init__(self):
+        super().__init__(goblin_race, classes["R"])
         self.health_points = 85
 
 class Skeleton_Enemy(Enemy_Entity):
-    def __init__(self, race: Race):
-        super().__init__(race)
+    def __init__(self):
+        super().__init__(skeleton_race, classes["M"])
         self.health_points = 90
 
 
