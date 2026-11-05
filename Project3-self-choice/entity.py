@@ -30,6 +30,7 @@ class Entity(ABC):
         self.__health_points = 100
 
 
+
     #armour class property methods
     def get_armour_class(self):
         return self.__armour_class
@@ -49,6 +50,11 @@ class Entity(ABC):
             return hp
         else: return None
     health_points = property(get_health_points, set_health_points)
+
+    def get_stats(self):
+        return self.__stats
+    
+    stats = property(get_stats)
 
     def get_race_bonus(self, stat):
         if stat in self.race.bonuses:
@@ -83,7 +89,8 @@ class Enemy_Entity(Entity):
     
     def turn_method(self, target):
         if self.health_points >= 0:
-            self.attacklist[random.randint(1, len(self.attacklist))].hit(self, target)
+            # self.class_.attacks[random.randint(0, len(self.class_.attacks))].hit(self, target)
+            random.choice(self.class_.attacks).hit(self, target)
 
 class Orc_Enemy(Enemy_Entity):
     def __init__(self):
@@ -97,12 +104,12 @@ class Goblin_Enemy(Enemy_Entity):
 
 class Skeleton_Enemy(Enemy_Entity):
     def __init__(self):
-        super().__init__(skeleton_race, classes["M"])
+        super().__init__(skeleton_race, classes["W"])
         self.health_points = 90
 
 
 #-----------------------------------Player class-----------------------------------#
-
+clearer = "\033[H\033[2J\033[3J"
 class player_entity(Entity):
     def __init__(self, race, class_):
         super().__init__(race, class_)
@@ -113,18 +120,20 @@ class player_entity(Entity):
         if self.health_points >=0 :
             while True:
                 action = input("would you like to attack (a), or use an item (I)")
+                print(clearer)
                 if action.lower() == "a":
-                    for i, attack in enumerate(self.class_.attacklist):
+                    for i, attack in enumerate(self.class_.attacks):
                         print(f"{i} - {attack.name}")
-                    if len(self.class_.attacklist) > 0:
+                    if len(self.class_.attacks) > 0:
                         attack_action = (input("which attack would you like to use? [type 'esc' to go back]: "))
                         if attack_action.strip().lower() == "esc": 
+                            print(clearer)
                             continue
                         
                         else: 
-                            attack_action = str(attack_action)
+                            attack_action = int(attack_action)
 
-                        self.class_.attacklist[attack_action].hit(self, target)
+                        self.class_.attacks[attack_action].hit(self, target)
                         break
                     else:
                         print("No attacks in list.")
@@ -132,8 +141,11 @@ class player_entity(Entity):
                     if len(self.inventory) > 0:
                         for i, item in enumerate(self.inventory):
                             print(f"{i} - {item.name}\n")
+               
                         item_sel = self.inventory[int(input("which item (by index): "))]
                         item_sel.use_item
+                       
+                           
                         break
                     else:
                         print("No items in inventory")

@@ -1,12 +1,20 @@
 from abc import ABC, abstractmethod
 import random
 from dice import *
+import time
+
+
+def gump(message):
+    
+    print("\033[H\033[2J\033[3J")
+    print(message)
+    time.sleep(0.5)
 class Attack(ABC):
     def __init__(self, dice_quantity, dice_sides, name, type):
         self._dice_quantity = dice_quantity
         self._dice_sides = dice_sides
-        self._name = name
-        self._type = type
+        self.name = name
+        self.type = type
 
     @abstractmethod
     def hit(self, caller, target):
@@ -14,33 +22,39 @@ class Attack(ABC):
 
 class Magic_Attack(Attack):
     def hit(self, caller, target):
-        print(f"{caller.name}")
+        
         roll = random.randint(1, 20)
         if roll >= target.armour_class:
-            print(f"{self._name}, has hit the target!")
+            print(f"{self.name}, has hit the target!")
             dmg = 0
             for i in range(self._dice_quantity):
-                dmg += Dice(self._dice_sides).roll
-            dmg += caller._stats['wis']
+                dmg += Dice(self._dice_sides).roll()
+            dmg += caller.stats['wis']
+            target.recieve_damage(dmg)
             return True
         else:
-            print(f"{self._name}, failed.")
+            print(f"{self.name}, failed.")
             return False
 
 class Melee_Attack(Attack):
     def hit(self, caller, target):
-        print(f"{caller.name}")
+        # print(f"{caller.name}")
         roll = random.randint(1, 20)
         if roll >= target.armour_class:
-            print(f"{self._name}, has hit the target!")
+            
+            gump(f"{self.name}, has hit the target!")
             dmg = 0
             for i in range(self._dice_quantity):
-                dmg += Dice(self._dice_sides).roll
-            dmg += caller._stats['str']
+                dmg += Dice(self._dice_sides).roll()
+            dmg += caller.stats['str']
+            target.recieve_damage(dmg)
+           
+            gump(f"{self.name}, damages {target.__class__.__name__} for {dmg} damage!")
             return True
         else:
-            print(f"{self._name}, failed.")
+            gump(f"{self.name}, failed.")
             return False
+        
 
 magic_atks = {
     "fireball": Magic_Attack(3, 6, "Fireball", "magic"),
