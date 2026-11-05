@@ -77,8 +77,8 @@ class Entity(ABC):
 #-----------------------------------Enemy classes-----------------------------------#
 
 class Enemy_Entity(Entity):
-    def __init__(self, race: Race):
-        super().__init__(race)
+    def __init__(self, race: Race, class_):
+        super().__init__(race, class_)
         # self.item_to_drop               -implement
     
     def turn_method(self, target):
@@ -104,9 +104,10 @@ class Skeleton_Enemy(Enemy_Entity):
 #-----------------------------------Player class-----------------------------------#
 
 class player_entity(Entity):
-    def __init__(self, race):
-        super().__init__(race)
+    def __init__(self, race, class_):
+        super().__init__(race, class_)
         self.inventory = []
+        
     
     def turn_method(self, target):
         if self.health_points >=0 :

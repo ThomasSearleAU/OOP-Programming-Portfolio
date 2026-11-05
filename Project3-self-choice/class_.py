@@ -17,7 +17,7 @@ class Class:
     attacks = property(get_attacks)
     
 classes = {
-    "b": Class("barbarian", [melee_atks["slash"], melee_atks["stab"]]),
-    "w": Class("wizard", [magic_atks["fireball"], magic_atks["lightning bolt"]]),
-    "r": Class("rogue", [melee_atks["stab"], melee_atks["dagger strike"]]),
+    "B": Class("barbarian", [melee_atks["slash"], melee_atks["stab"]]),
+    "W": Class("wizard", [magic_atks["fireball"], magic_atks["lightning bolt"]]),
+    "R": Class("rogue", [melee_atks["stab"], melee_atks["dagger strike"]]),
 }

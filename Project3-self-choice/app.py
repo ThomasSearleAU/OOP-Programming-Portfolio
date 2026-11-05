@@ -53,7 +53,7 @@ if __name__ == '__main__':
     race = races[x]
     print(f"{race.name}")
 
-    y = input("what class [B - barbarian, W - wizard]")
+    y = input("what class [B - barbarian, W - wizard]").upper()
     class_ = classes[y]
 
     player = player_entity(race, class_)
