@@ -42,7 +42,7 @@ class Melee_Attack(Attack):
             print(f"{self._name}, failed.")
             return False
 
-rand_atks = {
+magic_atks = {
     "fireball": Magic_Attack(3, 6, "Fireball", "magic"),
     "lightning bolt": Magic_Attack(3, 6, "Lightning Bolt", "magic"),
     "ice shard": Magic_Attack(2, 8, "Ice Shard", "magic"),

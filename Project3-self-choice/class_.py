@@ -18,6 +18,6 @@ class Class:
     
 classes = {
     "b": Class("barbarian", [melee_atks["slash"], melee_atks["stab"]]),
-    "w": Class("wizard", [rand_atks["fireball"], rand_atks["lightning bolt"]]),
+    "w": Class("wizard", [magic_atks["fireball"], magic_atks["lightning bolt"]]),
     "r": Class("rogue", [melee_atks["stab"], melee_atks["dagger strike"]]),
 }
