@@ -11,3 +11,5 @@ several points to note are to:
     and given the amount i currently have it isn't a problem
 
     ideally, the ritual cost would only contain quantities, and would eliminate the need to search for resources with a cost of zero, as it would dramatically reduce time costs.
+
+while, i didnt immediately implement a dynamic inventory, i considered the effort and practice of doing so, and the techniques learnt will be accounted for in later projects. 
