@@ -1,4 +1,4 @@
-<diagram program="umletino" version="15.1"><zoom_level>5</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>411</x><y>85</y><w>105</w><h>115</h></coordinates><panel_attributes>__entity__
+<diagram program="umletino" version="15.1"><zoom_level>8</zoom_level><help_text>m notes</help_text><element><id>UMLClass</id><coordinates><x>480</x><y>280</y><w>168</w><h>184</h></coordinates><panel_attributes>__entity__
 --
 -stats: list
 +race
@@ -13,17 +13,17 @@ get_stats()
 
 get_race_bonus()
 
-abstract: turnmethod()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>111</x><y>470</y><w>105</w><h>60</h></coordinates><panel_attributes>__goblin enemy__
+abstract: turnmethod()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>896</y><w>168</w><h>96</h></coordinates><panel_attributes>__goblin enemy__
 --
 +race
 -stats 
 -health_points
 -armour_class
 --
-turnmethod()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>451</x><y>195</y><w>15</w><h>35</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>411</x><y>210</y><w>95</w><h>20</h></coordinates><panel_attributes>lt=-
-</panel_attributes><additional_attributes>10;20;170;20</additional_attributes></element><element><id>Relation</id><coordinates><x>376</x><y>215</y><w>50</w><h>45</h></coordinates><panel_attributes>lt=-
-</panel_attributes><additional_attributes>80;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>491</x><y>215</y><w>15</w><h>60</h></coordinates><panel_attributes>lt=-
-</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>UMLClass</id><coordinates><x>446</x><y>265</y><w>105</w><h>60</h></coordinates><panel_attributes>__player  entity__
+turnmethod()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>544</x><y>456</y><w>24</w><h>56</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>480</x><y>480</y><w>152</w><h>32</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes>10;20;170;20</additional_attributes></element><element><id>Relation</id><coordinates><x>424</x><y>488</y><w>80</w><h>72</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes>80;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>608</x><y>488</y><w>24</w><h>96</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>UMLClass</id><coordinates><x>536</x><y>568</y><w>168</w><h>96</h></coordinates><panel_attributes>__player  entity__
 --
 +race
 -stats
@@ -31,25 +31,63 @@ turnmethod()</panel_attributes><additional_attributes></additional_attributes></
 -armour_class
 +inventory = []
 --
-turnmethod()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>111</x><y>320</y><w>105</w><h>60</h></coordinates><panel_attributes>__orc enemy__
+turnmethod()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>656</y><w>168</w><h>96</h></coordinates><panel_attributes>__orc enemy__
 --
 +race
 -stats 
 -health_points
 -armour_class
 --
-turnmethod()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>286</x><y>250</y><w>105</w><h>65</h></coordinates><panel_attributes>__enemy entity__
+turnmethod()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>280</x><y>544</y><w>168</w><h>104</h></coordinates><panel_attributes>__enemy entity__
 --
 +race
 -stats 
 -health_points
 -armour_class
 --
-turnmethod()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>111</x><y>395</y><w>105</w><h>60</h></coordinates><panel_attributes>__skeleton enemy__
+turnmethod()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>776</y><w>168</w><h>96</h></coordinates><panel_attributes>__skeleton enemy__
 --
 +race
 -stats 
 -health_points
 -armour_class
 --
-turnmethod()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>211</x><y>345</y><w>115</w><h>20</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;210;20</additional_attributes></element><element><id>Relation</id><coordinates><x>311</x><y>310</y><w>65</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>110;10;110;200;10;200</additional_attributes></element><element><id>Relation</id><coordinates><x>211</x><y>415</y><w>115</w><h>20</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;210;20</additional_attributes></element><element><id>Relation</id><coordinates><x>211</x><y>465</y><w>115</w><h>20</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;210;20</additional_attributes></element><element><id>Relation</id><coordinates><x>311</x><y>350</y><w>15</w><h>135</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;250</additional_attributes></element></diagram>
+turnmethod()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>696</y><w>184</w><h>32</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;210;20</additional_attributes></element><element><id>Relation</id><coordinates><x>320</x><y>640</y><w>104</w><h>176</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>110;10;110;200;10;200</additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>808</y><w>184</w><h>32</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;210;20</additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>888</y><w>184</w><h>32</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;210;20</additional_attributes></element><element><id>Relation</id><coordinates><x>320</x><y>704</y><w>24</w><h>216</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;250</additional_attributes></element><element><id>UMLClass</id><coordinates><x>792</x><y>272</y><w>168</w><h>56</h></coordinates><panel_attributes>_Race_
+--
++name
++speed
++bonuses</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>640</x><y>280</y><w>168</w><h>40</h></coordinates><panel_attributes>lt=-
+m1=0..1
+m2=0..1
+&lt; teaches to </panel_attributes><additional_attributes>10;20;190;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>816</x><y>536</y><w>168</w><h>88</h></coordinates><panel_attributes>_Class_
+--
++name
+-attacks
+--
++add_attacks()
++get_attacks()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>696</x><y>568</y><w>136</w><h>40</h></coordinates><panel_attributes>lt=-
+m1=0..1
+m2=0..1
+&lt; teaches to </panel_attributes><additional_attributes>150;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>400</x><y>568</y><w>768</w><h>224</h></coordinates><panel_attributes>lt=-
+m1=0..1
+m2=0..1
+&lt; teaches to </panel_attributes><additional_attributes>920;10;920;240;10;250</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1224</x><y>200</y><w>168</w><h>96</h></coordinates><panel_attributes>_Attack_
+--
+-dice_quantity
+-dice_sides
++name
+-type
+--
+hit()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1112</x><y>344</y><w>168</w><h>56</h></coordinates><panel_attributes>_Magic Attack_
+--
+hit()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1328</x><y>344</y><w>168</w><h>56</h></coordinates><panel_attributes>_Melee attack_
+--
+hit()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1296</x><y>288</y><w>24</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>1272</x><y>336</y><w>72</w><h>32</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes>10;20;70;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1232</x><y>424</y><w>152</w><h>32</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes>10;20;170;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1232</x><y>392</y><w>24</w><h>64</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1360</x><y>392</y><w>24</w><h>64</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>976</x><y>432</y><w>360</w><h>168</h></coordinates><panel_attributes>lt=-
+m1=0..m
+m2=0..1
+&lt; teaches to </panel_attributes><additional_attributes>410;10;410;180;10;180</additional_attributes></element></diagram>
