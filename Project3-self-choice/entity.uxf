@@ -1,0 +1,55 @@
+<diagram program="umletino" version="15.1"><zoom_level>5</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>411</x><y>85</y><w>105</w><h>115</h></coordinates><panel_attributes>__entity__
+--
+-stats: list
++race
++class
+-health_points
+-armour_class
+--
+get_armour_class()
+set_armour_class()
+
+get_stats()
+
+get_race_bonus()
+
+abstract: turnmethod()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>111</x><y>470</y><w>105</w><h>60</h></coordinates><panel_attributes>__goblin enemy__
+--
++race
+-stats 
+-health_points
+-armour_class
+--
+turnmethod()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>451</x><y>195</y><w>15</w><h>35</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>411</x><y>210</y><w>95</w><h>20</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes>10;20;170;20</additional_attributes></element><element><id>Relation</id><coordinates><x>376</x><y>215</y><w>50</w><h>45</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes>80;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>491</x><y>215</y><w>15</w><h>60</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>UMLClass</id><coordinates><x>446</x><y>265</y><w>105</w><h>60</h></coordinates><panel_attributes>__player  entity__
+--
++race
+-stats
+-health_points
+-armour_class
++inventory = []
+--
+turnmethod()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>111</x><y>320</y><w>105</w><h>60</h></coordinates><panel_attributes>__orc enemy__
+--
++race
+-stats 
+-health_points
+-armour_class
+--
+turnmethod()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>286</x><y>250</y><w>105</w><h>65</h></coordinates><panel_attributes>__enemy entity__
+--
++race
+-stats 
+-health_points
+-armour_class
+--
+turnmethod()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>111</x><y>395</y><w>105</w><h>60</h></coordinates><panel_attributes>__skeleton enemy__
+--
++race
+-stats 
+-health_points
+-armour_class
+--
+turnmethod()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>211</x><y>345</y><w>115</w><h>20</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;210;20</additional_attributes></element><element><id>Relation</id><coordinates><x>311</x><y>310</y><w>65</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>110;10;110;200;10;200</additional_attributes></element><element><id>Relation</id><coordinates><x>211</x><y>415</y><w>115</w><h>20</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;210;20</additional_attributes></element><element><id>Relation</id><coordinates><x>211</x><y>465</y><w>115</w><h>20</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;210;20</additional_attributes></element><element><id>Relation</id><coordinates><x>311</x><y>350</y><w>15</w><h>135</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;250</additional_attributes></element></diagram>
